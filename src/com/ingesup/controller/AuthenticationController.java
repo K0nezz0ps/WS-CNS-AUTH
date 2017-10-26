@@ -2,6 +2,8 @@ package com.ingesup.controller;
 
 import java.util.Map;
 
+import javax.servlet.http.Cookie;
+
 import com.ingesup.controller.utils.HttpServletUtils;
 import com.ingesup.manager.UserManager;
 import com.ingesup.model.User;
@@ -66,10 +68,14 @@ public class AuthenticationController extends HttpServletUtils {
 			
 			// 2b.3 Else, store informations in the session, then display the monitor
 			else {
-				this.request.setAttribute("validation", "Successfully connected.");
 
-				this.request.getSession().setAttribute("email", currentUser.getMail());
-				this.request.getSession().setAttribute("isConnected", true);
+				Cookie isConnected = new Cookie("isConnected", "true");
+				isConnected.setPath("/");
+				Cookie userEmail   = new Cookie("email", currentUser.getMail());
+				userEmail.setPath("/");
+				
+				this.response.addCookie(isConnected);
+				this.response.addCookie(userEmail);
 				
 				this.redirect("/WS-MASTERE-IS/monitor");
 				
