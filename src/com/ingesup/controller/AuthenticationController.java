@@ -90,9 +90,14 @@ public class AuthenticationController extends HttpServletUtils {
 	
 	public void logout() {
 		
-		// 1. Destroy Session values 
-		this.request.getSession().removeAttribute("email");
-		this.request.getSession().removeAttribute("isConnected");
+		// 1. Destroy Session values
+		if(this.request.getCookies() != null)
+			for(Cookie currentCookie : this.request.getCookies()){
+				currentCookie.setValue("");
+				currentCookie.setMaxAge(0);
+				currentCookie.setPath("/");
+				this.response.addCookie(currentCookie);
+			}
 		
 		// 2. Attempt to redirect on the monitor (to redirect on login page)
 		this.redirect("/WS-MASTERE-IS/monitor");
