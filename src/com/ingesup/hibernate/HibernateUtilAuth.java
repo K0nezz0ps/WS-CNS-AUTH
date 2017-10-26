@@ -9,7 +9,7 @@ import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import lombok.Data;
 
 @Data
-public class HibernateUtil {
+public class HibernateUtilAuth {
 	
 	private static final SessionFactory sessionFactory;
 	

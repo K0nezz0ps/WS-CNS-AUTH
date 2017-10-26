@@ -4,7 +4,7 @@ import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.query.Query;
-import com.ingesup.hibernate.HibernateUtil;
+import com.ingesup.hibernate.HibernateUtilAuth;
 import com.ingesup.model.User;
 
 public class UserManager {
@@ -18,7 +18,7 @@ public class UserManager {
 			
 //			t = session.beginTransaction();
 			
-			Query query = HibernateUtil.getSession().createQuery("from User where mail=:mail and password=:password");
+			Query query = HibernateUtilAuth.getSession().createQuery("from User where mail=:mail and password=:password");
 			query.setParameter("mail", user.getMail().toLowerCase());
 			query.setParameter("password", user.getPassword());
 			
