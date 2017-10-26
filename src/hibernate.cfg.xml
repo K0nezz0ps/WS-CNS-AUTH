@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+	"-//Hibernate/Hibernate Configuration DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+	
+	<hibernate-configuration>
+		<session-factory>
+		
+			<!-- JDBC Driver -->
+			<property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+			
+			<!-- Connection link -->
+<!-- 			<property name="connection.url">jdbc:mysql://localhost/ws-mastere-is?autoReconnect=true</property> -->
+<!-- 			<property name="connection.username">konezz</property> -->
+<!-- 			<property name="connection.password">root</property> -->
+			
+			<property name="connection.url">jdbc:mysql://mysql-docblayck.alwaysdata.net:3306/docblayck_projectingesup?autoReconnect=true</property>
+			<property name="connection.username">docblayck_inges</property>
+			<property name="connection.password">FGLN@ingesup</property>
+			
+			<!-- Pool -->
+			<property name="connection.pool_size">10</property>
+			
+			<!-- SQL Dialect -->
+			<property name="dialect">org.hibernate.dialect.MySQLDialect</property>
+			
+			<!-- Persistence -->
+			<property name="current_session_context_class">thread</property>
+			
+			<!-- SQL Display logs -->
+			<property name="show_sql">true</property>
+			
+			<!-- Automatic create database -->
+<!-- 			<property name="hibernate.hbm2dll.auto">create/update</property> -->
+
+			<!-- Mapping class métier -->
+			<mapping class="com.ingesup.model.User"/>
+			
+		</session-factory>
+	</hibernate-configuration>
