@@ -44,5 +44,22 @@ public class HibernateUtilAuth {
 		return session;
 		
 	}
+	
+	/**
+	 * Function that commit Transaction & close Session
+	 */
+	public void cleanHibernateExchange() {
+		
+		try{
+			if(HibernateUtilAuth.getSession().getTransaction().isActive())
+				HibernateUtilAuth.getSession().getTransaction().commit();
+		} catch (Exception e){
+			HibernateUtilAuth.getSession().getTransaction().rollback();
+			e.printStackTrace();
+		} finally {
+			if(HibernateUtilAuth.getSession().isOpen())
+				HibernateUtilAuth.getSession().close();
+		}
+	}
 
 }
