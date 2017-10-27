@@ -22,7 +22,7 @@
 
 	<body>
 	
-		<form method="POST" action="/WS-CNS-AUTH/auth/login">
+		<form method="POST" action="/WS-CNS-AUTH/login">
 			<div><label>E-mail :</label> <input type="text" placeholder="Your username" name="inputEmail" /></div>
 			<div><label>Password :</label> <input type="password" placeholder="Your password" name="inputPassword" /></div>
 			<div><input type="submit" value="Connect" /></div>

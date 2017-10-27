@@ -6,15 +6,51 @@
   <packaging>war</packaging>
   <version>0.0.1-SNAPSHOT</version>
   
-  <dependencies>
+  <properties>
+        <springframework.version>4.3.0.RELEASE</springframework.version>
+        <jackson.library>2.7.5</jackson.library>
+    </properties>
+ 
+    <dependencies>
+	        <dependency>
+	            <groupId>org.springframework</groupId>
+	            <artifactId>spring-core</artifactId>
+	            <version>${springframework.version}</version>
+	        </dependency>
+	        <dependency>
+	            <groupId>org.springframework</groupId>
+	            <artifactId>spring-web</artifactId>
+	            <version>${springframework.version}</version>
+	        </dependency>
+	        <dependency>
+	            <groupId>org.springframework</groupId>
+	            <artifactId>spring-webmvc</artifactId>
+	            <version>${springframework.version}</version>
+	        </dependency>
+	 
+	        <dependency>
+	            <groupId>javax.servlet</groupId>
+	            <artifactId>javax.servlet-api</artifactId>
+	            <version>3.1.0</version>
+	        </dependency>
+	        <dependency>
+	            <groupId>com.fasterxml.jackson.core</groupId>
+	            <artifactId>jackson-databind</artifactId>
+	            <version>${jackson.library}</version>
+	        </dependency>
+	        <dependency>
+	            <groupId>com.fasterxml.jackson.dataformat</groupId>
+	            <artifactId>jackson-dataformat-xml</artifactId>
+	            <version>${jackson.library}</version>
+	        </dependency>
+		  
+		  <dependency>
+		  	 <groupId>com.ingesup</groupId>
+		  	 <artifactId>FW-COM</artifactId>
+		  	 <version>0.0.1-SNAPSHOT</version>
+		  	 <scope>compile</scope>
+		  </dependency>
   
-  	<dependency>
-  		<groupId>com.ingesup</groupId>
-  		<artifactId>FW-COM</artifactId>
-  		<version>0.0.1-SNAPSHOT</version>
-  		<scope>compile</scope>
-  	</dependency>
-  	
   </dependencies>
 
   <build>
