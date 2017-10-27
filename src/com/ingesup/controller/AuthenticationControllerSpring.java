@@ -30,8 +30,10 @@ public class AuthenticationControllerSpring {
 	public String login(Model model, HttpServletRequest request, HttpServletResponse response) {
 		
 		// 1. Validating the user
-		if(ControllerUtils.validateUser(request))
+		if(ControllerUtils.validateUser(request)){
 			ControllerUtils.redirect("/WS-MASTERE-IS/park", response);
+			return null;
+		}
         
         return "/authentication/login";
 	}
@@ -68,8 +70,10 @@ public class AuthenticationControllerSpring {
 
 				Cookie isConnected = new Cookie("isConnected", "true");
 				isConnected.setPath("/");
+				isConnected.setMaxAge(600);
 				Cookie userEmail   = new Cookie("email", currentUser.getMail());
 				userEmail.setPath("/");
+				userEmail.setMaxAge(600);
 				
 				response.addCookie(isConnected);
 				response.addCookie(userEmail);
