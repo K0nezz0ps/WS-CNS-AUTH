@@ -1,32 +1,19 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-	<head>
+<jsp:include page="header.jsp"/>
 	
-		<!-- UTF-8 -->
-		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-		
-		<!-- Import for JQuery -->
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-		
-		<!-- Title -->
-		<title>IngéSup - ${title}</title>
-	</head>
-
 	<body>
 	
-		<form method="POST" action="/WS-CNS-AUTH/login">
-			<div><label>E-mail :</label> <input type="text" placeholder="Your username" name="inputEmail" /></div>
-			<div><label>Password :</label> <input type="password" placeholder="Your password" name="inputPassword" /></div>
-			<div><input type="submit" value="Connect" /></div>
-		</form>
+		<div style="margin-top: 50px; margin-bottom: 150px; width: 400px; text-align: center;" class="container">
 		
-		<p style="color: red;">${error}</p>
-		<p style="color: green;">${validation}</p>
+			<form method="POST" action="/WS-CNS-AUTH/login">
+				<div><label style="float: left;">E-mail :</label> <input type="text" placeholder="Your username" name="inputEmail" /></div>
+				<div><label style="float: left;">Password :</label> <input type="password" placeholder="Your password" name="inputPassword" /></div>
+				
+				<button style="margin-top: 20px;" class="btn waves-effect waves-light" type="submit" name="action">Connect<i class="material-icons right">verified_user</i></button>
+			</form>
+			
+			<p style="color: red;">${error}</p>
+			<p style="color: green;">${validation}</p>
+			
+		</div>
 
-	</body>
-
-</html>
+<jsp:include page="footer.jsp"/>
