@@ -16,10 +16,6 @@
 		<title>IngéSup - ${title}</title>
 	</head>
 
-	<header>
-		JEE Mastère IngéSup Header
-	</header>
-
 	<body>
 	
 		<form method="POST" action="/WS-CNS-AUTH/login">
@@ -32,9 +28,5 @@
 		<p style="color: green;">${validation}</p>
 
 	</body>
-
-	<footer>
-		JEE Mastère Footer IngéSup
-	</footer>
 
 </html>

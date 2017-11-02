@@ -3,15 +3,11 @@ package com.ingesup.controller;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
-
 import com.ingesup.controller.utils.ControllerUtils;
 import com.ingesup.manager.UserManager;
 import com.ingesup.model.User;
@@ -35,7 +31,7 @@ public class AuthenticationControllerSpring {
 			return null;
 		}
         
-        return "/authentication/login";
+        return "login";
 	}
 	
 	/**
@@ -85,7 +81,7 @@ public class AuthenticationControllerSpring {
 
 		}
 		
-		return "/authentication/login";
+		return "login";
 	}
 	
 	/**
@@ -109,7 +105,7 @@ public class AuthenticationControllerSpring {
 		// 2. Attempt to redirect on the monitor (to redirect on login page)
 		ControllerUtils.redirect("/WS-MASTERE-IS/park", response);
 		
-		return "/authentication/login";
+		return "login";
 		
 	}
 
