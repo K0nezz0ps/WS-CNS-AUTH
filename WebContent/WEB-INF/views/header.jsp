@@ -17,7 +17,8 @@
 	    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 		<!-- Title -->
 		<title>IngéSup - Authentication</title>
-		
+		<link rel="icon" type="image/png" href="/WS-CNS-AUTH/assets/images/favicon.png" />
+
 	</head>
 	
 	<header class="header-container">
