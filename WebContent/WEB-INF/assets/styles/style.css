@@ -6,7 +6,7 @@
 	border-bottom: 2px solid grey;
 	background-color: #26a69a;
 }
-	.header-container #logout {
+	.header-container .shortcut {
 		float: right;
 		height: 48px;
 		width: 48px;

@@ -1,23 +1,38 @@
 package com.ingesup.hibernate;
 
 import org.hibernate.HibernateException;
-import org.hibernate.Session;
-import org.hibernate.Transaction;
 import org.hibernate.query.Query;
-
 import com.ingesup.model.User;
 
 public class UserManager {
 	
-	public static User get(User user) {
-		
-//		Session session = HibernateUtil.getSession();
-//		Transaction t = null;
+	/**
+	 * Return the id of a user with a given User mail, as a User
+	 * @return
+	 */
+	@SuppressWarnings({"deprecation","rawtypes"})
+	public static User getUser(String mail){
 		
 		try {
+
+			Query query = HibernateUtilAuth.getSession().createQuery("from User where mail=:uMail");
+			query.setParameter("uMail", mail);
+
+			User idUser = (User) query.uniqueResult();
+
+			return idUser;
 			
-//			t = session.beginTransaction();
-			
+		} catch (HibernateException e){
+			e.printStackTrace();
+			return null;
+		}
+	}
+	
+	@SuppressWarnings({"rawtypes"})
+	public static User get(User user) {
+
+		try {
+
 			Query query = HibernateUtilAuth.getSession().createQuery("from User where mail=:mail and password=:password");
 			query.setParameter("mail", user.getMail().toLowerCase());
 			query.setParameter("password", user.getPassword());
@@ -30,16 +45,11 @@ public class UserManager {
 				// Nothing to display, this exception only occure if no result has been found
 				// TODO: use the deprecated uniqueResult() that does not throw exception and just return null if no result
 			}
-//			t.commit();
 
 			return aliveUser;
 		} catch (HibernateException e){
 			e.printStackTrace();
-//			if(t != null)
-//				t.rollback();
 			return null;
-		} finally {
-//			session.close();
 		}
 	}
 

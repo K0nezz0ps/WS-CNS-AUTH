@@ -2,10 +2,10 @@
 	
 	<body>
 	
-	<div class="park-title">
-		<h3>Dashboard Authentication</h3>
-		<i>Connect yourself to access on the administration pages</i>
-	</div>
+		<div class="park-title">
+			<h3>Dashboard Authentication</h3>
+			<i>Connect yourself to access on the administration pages</i>
+		</div>
 	
 		<div style="margin-top: 50px; margin-bottom: 150px; width: 400px; text-align: center;" class="container">
 		
@@ -20,5 +20,5 @@
 			<p style="color: green;">${validation}</p>
 			
 		</div>
-
+		
 <jsp:include page="footer.jsp"/>

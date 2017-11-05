@@ -4,6 +4,8 @@ import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.ingesup.hibernate.UserManager;
+
 public class ControllerUtils {
 	
 	/**
@@ -26,23 +28,32 @@ public class ControllerUtils {
 	 * @param request
 	 * @return
 	 */
-	public static boolean validateUser(HttpServletRequest request) {
+	public static boolean isValidUser(HttpServletRequest request) {
 		
 		// 1. Getting cookies
 		Cookie[] cookieList = request.getCookies();
 		
 		// 2. Trying to find the "isConnected" cookie
-		Cookie requestCookie = null;
+		Cookie sessionCookie  = null;
+		Cookie emailCookie    = null;
+		
 		if(cookieList != null)
-			for(Cookie currentCookie : cookieList){
-				if(currentCookie.getName().equals("isConnected")){
-					requestCookie = currentCookie;
-					break;
+			// ForEach cookie, trying to get the interested ones 
+			for(Cookie currentCookie : cookieList){		
+				switch(currentCookie.getName()){
+					case "isConnected": sessionCookie = currentCookie;
+										break;
+					case "userEmail"  : emailCookie   = currentCookie;
+										break;
+					default: break;
 				}
 			}
 		
-		// 3. Checking that the cookie value is set to true
-		if( requestCookie == null || !requestCookie.getValue().equals("true") )
+		// 3. Checking that each previous wanted cookies are not null, then, checking if the user attached to the email & password exist
+		if( sessionCookie == null 
+				|| !sessionCookie.getValue().equals("true") 
+				|| emailCookie == null 
+				|| UserManager.getUser(emailCookie.getValue()) == null)
 			return false;
 		
 		return true;

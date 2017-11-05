@@ -26,16 +26,20 @@ public class AuthenticationControllerSpring {
 	public String login(Model model, HttpServletRequest request, HttpServletResponse response) {
 		
 		// 1. Validating the user
-		if(ControllerUtils.validateUser(request)){
+		if(ControllerUtils.isValidUser(request)){
 			ControllerUtils.redirect("/WS-MASTERE-IS/park", response);
 			return null;
 		}
+		
+		// 2. Settings the default models
+		model.addAttribute("pageTitle", "Authentication");
+		model.addAttribute("showLogout", false);
         
         return "login";
 	}
 	
 	/**
-	 * POST Method to attempt a connexion
+	 * POST Method to attempt a connection
 	 * @param email
 	 * @param password
 	 * @param model
@@ -85,6 +89,10 @@ public class AuthenticationControllerSpring {
 
 		}
 		
+		// 2. Settings the default models
+		model.addAttribute("pageTitle", "Authentication");
+		model.addAttribute("showLogout", false);
+		
 		return "login";
 	}
 	
@@ -95,7 +103,7 @@ public class AuthenticationControllerSpring {
 	 * @return
 	 */
 	@RequestMapping(value="/logout", method = RequestMethod.GET)
-	public String login(HttpServletRequest request, HttpServletResponse response) {
+	public String logout(Model model, HttpServletRequest request, HttpServletResponse response) {
 		
 		// 1. Destroy Session values
 		if(request.getCookies() != null)
@@ -105,6 +113,10 @@ public class AuthenticationControllerSpring {
 				currentCookie.setPath("/");
 				response.addCookie(currentCookie);
 			}
+		
+		// 2. Settings the default models
+		model.addAttribute("pageTitle", "Authentication");
+		model.addAttribute("showLogout", false);
 		
 		return "login";
 		
