@@ -66,13 +66,17 @@ public class AuthenticationControllerSpring {
 
 				Cookie isConnected = new Cookie("isConnected", "true");
 				isConnected.setPath("/");
-				isConnected.setMaxAge(600);
-				Cookie userEmail   = new Cookie("email", currentUser.getMail());
+				isConnected.setMaxAge(1200);
+				Cookie userEmail   = new Cookie("userEmail", currentUser.getMail());
 				userEmail.setPath("/");
-				userEmail.setMaxAge(600);
+				userEmail.setMaxAge(1200);
+				Cookie userPassword   = new Cookie("userPassword", currentUser.getPassword());
+				userEmail.setPath("/");
+				userEmail.setMaxAge(1200);
 				
 				response.addCookie(isConnected);
 				response.addCookie(userEmail);
+				response.addCookie(userPassword);
 				
 				ControllerUtils.redirect("/WS-MASTERE-IS/park", response);
 
@@ -101,9 +105,6 @@ public class AuthenticationControllerSpring {
 				currentCookie.setPath("/");
 				response.addCookie(currentCookie);
 			}
-		
-		// 2. Attempt to redirect on the monitor (to redirect on login page)
-		ControllerUtils.redirect("/WS-MASTERE-IS/park", response);
 		
 		return "login";
 		
