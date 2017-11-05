@@ -9,7 +9,14 @@
 		
 		<div style="margin-top: 50px; margin-bottom: 150px; width: 400px; text-align: center;" class="container">
 		
-			test
+			<table id="user-table">
+			
+				<thead><th>N°</th><th>E-Mail</th><th></th></thead>
+			
+				<tbody>
+					<tr ng-repeat="user in userList"><td>{{user.id}}</td><td>{{user.email}}</td></tr>
+				</tbody>
+			</table>
 			
 		</div>
 	

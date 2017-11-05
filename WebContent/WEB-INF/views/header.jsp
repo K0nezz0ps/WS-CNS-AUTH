@@ -7,8 +7,12 @@
 	<head>
 		<!-- UTF-8 -->
 		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+		<!-- Import for JQuery -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<!-- Import for AngularJS -->
+		<script src="/WS-MASTERE-IS/assets/libs/angular.min.js"></script>
 		<!-- Import CSS -->
-		<link rel="stylesheet" type="text/css" href="/WS-MASTERE-IS/assets/styles/style.css"/>
+		<link rel="stylesheet" type="text/css" href="/WS-CNS-AUTH/assets/styles/style.css"/>
 		<!-- Compiled and minified CSS -->
  		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
 	    <!-- Compiled and minified JavaScript -->
@@ -17,9 +21,9 @@
 	    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 		<!-- Title -->
 		<title>IngéSup - ${pageTitle}</title>
-		<link rel="icon" type="image/png" href="/WS-MASTERE-IS/assets/images/favicon.png" />
+		<link rel="icon" type="image/png" href="/WS-CNS-AUTH/assets/images/favicon.png" />
 		<!-- Authentication JAVASCRIPT -->
-		<script src="/WS-MASTERE-IS/assets/scripts/auth.js"></script>
+		<script src="/WS-CNS-AUTH/assets/scripts/auth.js"></script>
 
 	</head>
 	

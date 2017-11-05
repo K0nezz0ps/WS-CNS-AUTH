@@ -1,0 +1,127 @@
+/* Main CSS File for the MONITOR Project */
+
+.header-container {
+	height: 50px;
+	top: 0px;
+	border-bottom: 2px solid grey;
+	background-color: #26a69a;
+}
+	.header-container .shortcut {
+		float: right;
+		height: 48px;
+		width: 48px;
+		color: white;
+	}
+	.header-container i {
+		font-size: 30px;
+		margin-top: 8px;
+	}
+
+body {
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+.footer-container {
+	background-color: rgba(128, 128, 128, 0.34);
+	border: 2px solid grey;
+	text-align: center;
+	height: 110px;
+	bottom: 0px;
+}
+	.footer-container .footer-text {
+		font-size: 14px;
+		color: black;
+		font-weight: bold;
+		margin-top: 10px;
+	}
+	
+/* ============ PARK Main page ============ */
+
+.park-container {
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+.park-title {
+	text-align: center;
+}
+	.park-title h3 {
+		font-size: 22px;
+	}
+	.park-title i {
+		font-size: 16px;
+	}
+	
+.park-line {
+	border: 2px solid #26a69a;
+	border-radius: 4px;
+	font-weight: bold;
+	padding: 3px;
+}
+	.park-line:hover {
+		background-color: rgba(187, 234, 255, 0.46);
+	}
+
+.park-create {
+	width: 40%;
+	height: 120px;
+	margin: 30px auto 30px auto;
+}
+
+/* ============ PARK Room page ============ */
+
+.return-btn {
+	position: absolute;
+	top: 10px;
+	left: 10px;
+}
+
+/* ============ Room profile page ============ */
+
+/* ============ TEXT COLOR CLASSES ============ */
+.alert-text {
+	color: #ff0000;
+	font-weight: bold;
+}
+
+.heaven-text {
+	color: #f5a000;
+	font-weight: bold;
+}
+
+.raised-text {
+	color :#ffe200;
+	font-weight: bold;
+}
+
+.average-text {
+	color: #fff900;
+	font-weight: bold;
+}
+
+.good-text {
+	color:#b2ff00;
+	font-weight: bold;
+}
+
+.verygood-text {
+	color: #1ed000;
+	font-weight: bold;
+}
+
+/** =========== AUTHENTICATION =========== **/
+
+.authentication-container {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    width: 400px;
+}
+	.authentication-container form {
+		width: 400px;
+	}
+	
+/** ========= SECURITY CENTER ========= **/
+
+#user-table {
+	width: 80%;
+}

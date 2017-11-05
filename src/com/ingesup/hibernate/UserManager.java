@@ -1,5 +1,7 @@
 package com.ingesup.hibernate;
 
+import java.util.List;
+
 import org.hibernate.HibernateException;
 import org.hibernate.query.Query;
 import com.ingesup.model.User;
@@ -28,6 +30,11 @@ public class UserManager {
 		}
 	}
 	
+	/**
+	 * Search a user by the given User Object
+	 * @param user
+	 * @return
+	 */
 	@SuppressWarnings({"rawtypes"})
 	public static User get(User user) {
 
@@ -53,4 +60,24 @@ public class UserManager {
 		}
 	}
 
+	/**
+	 * Get all user
+	 * @return
+	 */
+	public static List<User> getAll(){
+		
+		try{
+			
+			Query query = HibernateUtilAuth.getSession().createQuery("from User");
+			
+			List<User> userList = (List<User>) query.list();
+			
+			return userList;
+			
+		} catch(HibernateException e){
+			e.printStackTrace();
+			return null;
+		}
+		
+	}
 }

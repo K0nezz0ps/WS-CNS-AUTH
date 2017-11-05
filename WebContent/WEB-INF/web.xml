@@ -6,17 +6,12 @@
 		 id="WebApp_ID" 
 		 version="3.1">
 		 
-  <display-name>WS-PROJECT-MASTERE</display-name>
+  <display-name>WS-CNS-AUTH</display-name>
   <jsp-config>
     <jsp-property-group>
       <url-pattern>*.jsp</url-pattern>
       <scripting-invalid>true</scripting-invalid>
     </jsp-property-group>
-<!--     <jsp-property-group> -->
-<!--       <url-pattern>*.jsp</url-pattern> -->
-<!--       <include-prelude>/WEB-INF/includes/header.jsp</include-prelude> -->
-<!--       <include-coda>/WEB-INF/includes/footer.jsp</include-coda> -->
-<!--     </jsp-property-group> -->
   </jsp-config>
   
    <!-- Configuration SpringMVC -->
@@ -39,16 +34,6 @@
 	    <servlet-name>default</servlet-name>
 	    <url-pattern>/assets/*</url-pattern>
 	</servlet-mapping>
-	
-  <!-- Servlet to authenticate users & logout -->
-<!--   <servlet> -->
-<!--   	<servlet-name>AuthenticationController</servlet-name> -->
-<!--   	<servlet-class>com.ingesup.controller.AuthenticationController</servlet-class> -->
-<!--   </servlet> -->
-<!--   <servlet-mapping> -->
-<!--   	<servlet-name>AuthenticationController</servlet-name> -->
-<!--   	<url-pattern>/auth/*</url-pattern> -->
-<!--   </servlet-mapping> -->
   
   <welcome-file-list>
     <welcome-file>index.html</welcome-file>

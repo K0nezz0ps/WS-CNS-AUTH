@@ -1,5 +1,7 @@
 package com.ingesup.controller;
 
+import java.util.ArrayList;
+
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -30,6 +32,8 @@ public class AuthenticationControllerSpring {
 			ControllerUtils.redirect("/WS-MASTERE-IS/park", response);
 			return null;
 		}
+		
+		model.addAttribute("userList", new ArrayList<>());
 		
 		// 2. Settings the default models
 		model.addAttribute("pageTitle", "Authentication");
@@ -89,6 +93,8 @@ public class AuthenticationControllerSpring {
 
 		}
 		
+		model.addAttribute("userList", new ArrayList<>());
+		
 		// 2. Settings the default models
 		model.addAttribute("pageTitle", "Authentication");
 		model.addAttribute("showLogout", false);
@@ -113,6 +119,8 @@ public class AuthenticationControllerSpring {
 				currentCookie.setPath("/");
 				response.addCookie(currentCookie);
 			}
+		
+		model.addAttribute("userList", new ArrayList<>());
 		
 		// 2. Settings the default models
 		model.addAttribute("pageTitle", "Authentication");
