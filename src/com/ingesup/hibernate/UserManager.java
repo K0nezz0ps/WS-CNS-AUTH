@@ -1,10 +1,10 @@
-package com.ingesup.manager;
+package com.ingesup.hibernate;
 
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.query.Query;
-import com.ingesup.hibernate.HibernateUtilAuth;
+
 import com.ingesup.model.User;
 
 public class UserManager {
