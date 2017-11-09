@@ -4,6 +4,9 @@ import java.util.List;
 
 import org.hibernate.HibernateException;
 import org.hibernate.query.Query;
+
+import com.google.common.base.Charsets;
+import com.google.common.hash.Hashing;
 import com.ingesup.model.User;
 
 public class UserManager {
@@ -42,7 +45,7 @@ public class UserManager {
 
 			Query query = HibernateUtilAuth.getSession().createQuery("from User where mail=:mail and password=:password");
 			query.setParameter("mail", user.getMail().toLowerCase());
-			query.setParameter("password", user.getPassword());
+			query.setParameter("password", Hashing.sha1().hashString(user.getPassword(), Charsets.UTF_8 ).toString());
 			
 			User aliveUser = null;
 			

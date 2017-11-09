@@ -10,6 +10,9 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+
+import com.google.common.base.Charsets;
+import com.google.common.hash.Hashing;
 import com.ingesup.controller.utils.ControllerUtils;
 import com.ingesup.hibernate.UserManager;
 import com.ingesup.model.User;
@@ -78,7 +81,7 @@ public class AuthenticationControllerSpring {
 				Cookie userEmail   = new Cookie("userEmail", currentUser.getMail());
 				userEmail.setPath("/");
 				userEmail.setMaxAge(1200);
-				Cookie userPassword   = new Cookie("userPassword", currentUser.getPassword());
+				Cookie userPassword   = new Cookie("userPassword", Hashing.sha1().hashString(currentUser.getPassword(), Charsets.UTF_8 ).toString());
 				userEmail.setPath("/");
 				userEmail.setMaxAge(1200);
 				

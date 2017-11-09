@@ -8,6 +8,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+
+import com.google.common.base.Charsets;
+import com.google.common.hash.Hashing;
 import com.ingesup.controller.utils.ControllerUtils;
 import com.ingesup.hibernate.EntityManager;
 import com.ingesup.hibernate.UserManager;
@@ -47,7 +50,7 @@ public class UserRestController {
 			return new ResponseEntity<>("Vous n'êtes pas autorisé à faire cette action.",HttpStatus.UNAUTHORIZED);
 		
 		// 1. Trying to load the request user
-		User currentUser = new User(null, userEmail, userPassword);
+		User currentUser = new User(null, userEmail, Hashing.sha1().hashString(userPassword, Charsets.UTF_8 ).toString());
 		
 		// 2. Create the user
 		try {
