@@ -28,6 +28,8 @@ body {
 	text-align: center;
 	height: 110px;
 	bottom: 0px;
+	position: absolute;
+	bottom: 0;
 }
 	.footer-container .footer-text {
 		font-size: 14px;
