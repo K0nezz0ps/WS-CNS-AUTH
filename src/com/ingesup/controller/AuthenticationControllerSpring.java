@@ -77,13 +77,13 @@ public class AuthenticationControllerSpring {
 
 				Cookie isConnected = new Cookie("isConnected", "true");
 				isConnected.setPath("/");
-				isConnected.setMaxAge(1200);
+				isConnected.setMaxAge(3600);
 				Cookie userEmail   = new Cookie("userEmail", currentUser.getMail());
 				userEmail.setPath("/");
-				userEmail.setMaxAge(1200);
+				userEmail.setMaxAge(3600);
 				Cookie userPassword   = new Cookie("userPassword", Hashing.sha1().hashString(currentUser.getPassword(), Charsets.UTF_8 ).toString());
 				userEmail.setPath("/");
-				userEmail.setMaxAge(1200);
+				userEmail.setMaxAge(3600);
 				
 				response.addCookie(isConnected);
 				response.addCookie(userEmail);
