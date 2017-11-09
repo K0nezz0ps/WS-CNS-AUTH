@@ -59,6 +59,22 @@ public class UserManager {
 			return null;
 		}
 	}
+	
+	public static User get(Integer userId){
+		
+		try{
+			
+			Query query = HibernateUtilAuth.getSession().createQuery("from User where id=:id");
+			query.setParameter("id", userId);
+			
+			return (User) query.uniqueResult();
+			
+		} catch(HibernateException e){
+			e.printStackTrace();
+			return null;
+		}
+		
+	}
 
 	/**
 	 * Get all user

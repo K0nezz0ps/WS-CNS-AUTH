@@ -48,7 +48,7 @@ public class HibernateUtilAuth {
 	/**
 	 * Function that commit Transaction & close Session
 	 */
-	public void cleanHibernateExchange() {
+	public static void cleanHibernateExchange() {
 		
 		try{
 			if(HibernateUtilAuth.getSession().getTransaction().isActive())

@@ -2,7 +2,7 @@
 
 	</body>
 
-	<footer style="position: fixed; width: 100%; bottom: 0;" class="footer-container">
+	<footer style="width: 100%; bottom: 0;" class="footer-container">
 	
 		<div class="footer-text">
 				@IngéSup - Paris <br>

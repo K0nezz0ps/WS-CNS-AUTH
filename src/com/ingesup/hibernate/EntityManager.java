@@ -18,6 +18,8 @@ public abstract class EntityManager {
 			e.printStackTrace();
 
 			return null;
+		} finally{
+			HibernateUtilAuth.cleanHibernateExchange();
 		}
 	}
 	
@@ -33,6 +35,8 @@ public abstract class EntityManager {
 		} catch(HibernateException e){
 			e.printStackTrace();
 			return;
+		} finally{
+			HibernateUtilAuth.cleanHibernateExchange();
 		}
 		
 	}
@@ -45,6 +49,8 @@ public abstract class EntityManager {
 		} catch (HibernateException e){
 			e.printStackTrace();
 			return;
+		} finally{
+			HibernateUtilAuth.cleanHibernateExchange();
 		}
 	}
 
@@ -58,7 +64,9 @@ public abstract class EntityManager {
 		} catch (HibernateException e){
 			e.printStackTrace();
 			return;
-		} 
+		}  finally{
+			HibernateUtilAuth.cleanHibernateExchange();
+		}
 	}
 	
 	public static <T> void delete(T object) {
@@ -67,8 +75,9 @@ public abstract class EntityManager {
 			HibernateUtilAuth.getSession().delete(object);
 		} catch (HibernateException e){
 			e.printStackTrace();
-
 			return;
+		} finally{
+			HibernateUtilAuth.cleanHibernateExchange();
 		}
 	}
 
