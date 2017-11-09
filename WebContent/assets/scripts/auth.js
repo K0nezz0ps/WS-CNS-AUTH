@@ -67,6 +67,8 @@ authApp.controller("securityCenterController", function($scope, $rootScope, $htt
 					$scope.showCreateValidation    = true;
 					$scope.userList.push(reponse.data);
 					$scope.input = {};
+					
+					window.location.href = "/WS-CNS-AUTH/securityCenter";
 				} else {
 					$scope.errorCreateMessage = response.data;
 					$scope.showCreateError    = true;
