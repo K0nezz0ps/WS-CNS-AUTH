@@ -24,7 +24,11 @@
 						<td>{{user.mail}}</td>
 						
 						<!-- Select park to manage -->
-						<td></td>
+						<td>
+							<select ng-model="selectedParkToAttribut">
+								<option ng-repeat="park in parkList" ng-value="park">{{park.name}}</option>
+							</select>
+						</td>
 						
 						<td style="text-align: center;">
 							<i style="color: red; cursor: pointer;" ng-click="displayAlert(user)" class="material-icons">cancel</i>
